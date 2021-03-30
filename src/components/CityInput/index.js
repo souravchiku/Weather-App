@@ -28,7 +28,6 @@ const CityInput = ({city,setCity, fetchCityWeather}) => {
                      type="text" 
                      placeholder="Enter City" 
                      onChange={handleInputChange} 
-                     className="search"
                      />
                      <p className="text-danger">{error}</p>
                 </Form.Group>

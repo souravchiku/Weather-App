@@ -2,16 +2,21 @@
 import './App.css';
 import CityInput from './components/CityInput/index'
 import React, {useState} from 'react'
+import axios from 'axios'
+
 function App() {
+  
   const[city, setCity] = useState("")
   const[cityWeather, setCityWeather] = useState({})
   const fetchCityWeather = ()=>{
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=efe12308b4f6e71856f34c0d7c135f7b`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=efe12308b4f6e71856f34c0d7c135f7b`,
+    
+    )
     .then((res)=>res.json())
     .then((result)=>{
       setCityWeather(result)
     
-    })
+    }).catch((error) => console.log('error is ',error))
   }
   return (
     <>
